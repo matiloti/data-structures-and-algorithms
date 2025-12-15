@@ -15,6 +15,7 @@ vector<int> pairNumUnsorted(int array[], size_t size, int target) {
         if(visitedElements.count(target - currElement) == 1) {
             res.push_back(visitedElements[target - currElement]);
             res.push_back(currPos);
+            return res;
         }
         visitedElements[currElement] = currPos;
     }
