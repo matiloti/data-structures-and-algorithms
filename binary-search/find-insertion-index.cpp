@@ -10,12 +10,10 @@ int binarySearch(vector<int> v, int target) {
     
     while(left < right) {
         mid = floor(left + (right - left) / 2);
-        if(v[mid] == target) return mid;
         if(target > v[mid]) left = mid + 1;
         else right = mid;
     }
     
-    if(target > v[left]) return right + 1;
     return left;
 }
 
