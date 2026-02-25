@@ -30,7 +30,7 @@ int countInfections(Matrix& m, Coord& curr, set<Coord>& explored) {
             curr.first + point.first, 
             curr.second + point.second
         };
-        if(m[coord.first][coord.second] == 2) continue; // count each infected cell propagation separately
+        if(!outOfBoundaries(m, curr) && m[coord.first][coord.second] == 2) continue; // count each infected cell propagation separately
         infectedCells += countInfections(
             m,  
             coord,
